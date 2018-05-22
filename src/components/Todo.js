@@ -29,17 +29,32 @@ export class ToDo extends React.Component{
     }
     
     updateLocalStorage(updatedTask){
-        console.log('Tasks Saved');
         localStorage.setItem('storedTasks', JSON.stringify(updatedTask));
     }
 
     render(){
         return(
             <div>
-                <h1>ToDo APP</h1>
+                <div className="p-3 mb-2 bg-dark text-white">
+                        <center>
+                            <h1 className="display-4">To Do List</h1>  
+                        </center>
+                        
+                        <div className="container">
+                            <AddNewTask updateList={this.updateList} />
+                        </div>
 
-                <AddNewTask updateList={this.updateList} />
-                <ToDoAppList tasks={this.state.tasks} removeItem={this.removeTask}/> 
+                        <br />
+                        <center><small><em><span>Click on the Item to remove it from the list</span></em></small></center>
+
+                </div>
+                <div className="container">
+                    <ToDoAppList tasks={this.state.tasks} removeItem={this.removeTask}/> 
+                </div>
+                <div className="fixed-bottom">
+                        <center><small><em><span>Powered by Felipe Mendes</span></em></small></center>
+                    <br />
+                </div>
             </div>
         );
     }

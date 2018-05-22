@@ -20,7 +20,13 @@ export class AddNewTask extends React.Component{
     render(){
         return(
             <form onSubmit={this.justSubmitted}>
-                <input type="text" />
+                <div className="input-group mb-3">
+                    <input type="text" className="form-control" placeholder="Type item and press Enter" aria-label="item" aria-describedby="basic-addon1" />
+                    
+                    <div className="input-group-append">
+                        <span className="input-group-text" id="basic-addon1"><i className="fas fa-plus"></i></span>
+                    </div>
+                </div>
             </form>
         );
     }

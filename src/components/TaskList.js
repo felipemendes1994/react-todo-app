@@ -7,7 +7,8 @@ export class ToDoAppList extends React.Component{
     }
 
     removeItem(elem){
-        var value = elem.target.parentNode.querySelector('span').innerText;
+        //var value = elem.target.parentNode.querySelector('span').innerText;
+        let value = elem.target.innerText
         this.props.removeItem(value);
     }
 
@@ -15,15 +16,14 @@ export class ToDoAppList extends React.Component{
 
         var itens = this.props.tasks.map((elem, i) => {
             return (
-                <li key={i}>
-                    <span>{elem}</span>
-                    <button onClick={this.removeItem}>x</button>
+                <li className="list-group-item list-group-item-action" onClick={this.removeItem} value={elem} key={i}>
+                    {elem}
                 </li>
             );
         });
 
         return(
-            <ul>
+            <ul className="list-group">
                 {itens}
             </ul>
         );
