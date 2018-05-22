@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {ToDo} from './components/Todo';
 import registerServiceWorker from './registerServiceWorker';
 
-var taskList = ["Task 1", "Task 2"];
+var taskList = [];
 
 var tasks = localStorage.getItem('storedTasks');
 
